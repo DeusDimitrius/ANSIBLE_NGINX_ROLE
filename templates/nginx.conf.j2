@@ -1,0 +1,49 @@
+#
+
+user  root;
+
+error_log {{ nginx_error_log }};
+pid logs/nginx.pid;
+
+{% block worker %}
+worker_processes {{ nginx_worker_processes }};
+{% endblock %}
+
+{% block events %}
+events {
+    worker_connections {{ nginx_worker_connections }};
+}
+{% endblock %}
+
+{% block http_begin %}
+http {
+{% block http_basic %}
+
+    include       {{ nginx_mime_file_path }};
+    default_type  application/octet-stream;
+
+    sendfile        {{ nginx_sendfile }};
+
+    access_log {{ nginx_access_log }};
+
+    keepalive_timeout  {{ nginx_keepalive_timeout }};
+    keepalive_requests {{ nginx_keepalive_requests }};
+
+    upstream flask_containers {
+        server {{ flaskapp1 }};
+        server {{ flaskapp2 }};
+        server {{ flaskapp3 }};
+}
+
+{% for server in upstream.servers %}
+	server {
+        	listen 80;
+        	server_name  {{server_name}};
+        	location / {
+            		#root   /web;
+            		#index  index.html index.htm;
+            		proxy_pass http://{{ web_app }};
+        	}
+	       }
+{% endfor %}
+}

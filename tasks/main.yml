@@ -1,0 +1,6 @@
+---
+
+- import_tasks: flaskapp.yml
+- import_tasks: deploy.yml
+- import_tasks: volumes.yml
+- import_tasks: build.yml

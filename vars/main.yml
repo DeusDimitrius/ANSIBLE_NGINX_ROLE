@@ -1,0 +1,7 @@
+---
+# vars file
+
+nginx_pkg: nginx:latest
+web_app: flaskapp
+server_name: localhost
+nginx_ports_mapping: 8081:80
