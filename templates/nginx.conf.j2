@@ -29,10 +29,10 @@ http {
     keepalive_timeout  {{ nginx_keepalive_timeout }};
     keepalive_requests {{ nginx_keepalive_requests }};
 
-    upstream flask_containers {
-        server {{ flaskapp1 }};
-        server {{ flaskapp2 }};
-        server {{ flaskapp3 }};
+    upstream web {
+        server {{ IP1 }};
+        server {{ IP2 }};
+        server {{ IP3 }};
 }
 
 {% for server in upstream.servers %}
