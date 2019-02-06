@@ -27,4 +27,4 @@ nginx_mime_file_path:"/etc/nginx/mime.types"
 nginx_exposed_ports: "80"
 nginx_ports_mapping: "7000:80"
 
-container_memory_limit: "10000000"
+container_memory_limit: "300m"
