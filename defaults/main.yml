@@ -1,22 +1,19 @@
 ---
 # defaults file for nginx
 
-nginx_package_name: "nginx:latest"
+nginx_docker_image: "nginx"
 
-nginx_conf_template: "nginx.conf.j2"
+nginx_docker_image_tag: "latest"
 
-nginx_error_log: "/var/log/nginx/error.log warn"
-nginx_access_log: "/var/log/nginx/access.log main buffer=16k flush=2m"
-
-nginx_sendfile: "on"
-nginx_keepalive_timeout: "65"
-nginx_keepalive_requests: "100"
-
-nginx_worker_connections: "512"
 nginx_worker_processes: "3"
+
 nginx_mime_file_path: "/etc/nginx/mime.types"
 
 nginx_exposed_ports: "80"
-nginx_ports_mapping: "7000:80"
 
-container_memory_limit: "300m"
+# List of nginx ports to be mapped
+nginx_ports_mapping: "7001:80"
+
+nginx_worker_connections: "512"
+
+nginx_keepalive_timeout: "65"
