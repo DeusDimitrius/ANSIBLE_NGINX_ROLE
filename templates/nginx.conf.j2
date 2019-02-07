@@ -28,9 +28,9 @@ http {
     keepalive_requests {{ nginx_keepalive_requests }};
 
     upstream web {
-        server {{ IP1 }};
-        server {{ IP2 }};
-        server {{ IP3 }};
+        server {{ IP1 }}:5000;
+        server {{ IP2 }}:5000;
+        server {{ IP3 }}:5000;
 }
 
 {% for server in upstream.servers %}
