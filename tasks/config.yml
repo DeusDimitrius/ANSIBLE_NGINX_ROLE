@@ -4,7 +4,7 @@
   template:
     src: nginx.conf.j2
     dest: "/home/jenkins/workspace/nginx/nginx.conf"
-    owner: root
-    group: root
-    mode: 0777
+#    owner: root
+#    group: root
+#    mode: 0777
   become: yes
