@@ -1,5 +1,5 @@
 error_log {{ nginx_error_log }};
-pid logs/nginx.pid;
+pid /var/run/nginx.pid;
 
 {% block worker %}
 worker_processes {{ nginx_worker_processes }};
@@ -31,12 +31,11 @@ http {
         server {{ IP3 }}:5000;
     }
 
-{% for server in upstream.servers %}
-	server {
-        	listen 80;
-        	location / {
-            		proxy_pass http://web_app;
-        	}
-	       }
-{% endfor %}
+    server {
+      listen 80;
+      location / {
+            	proxy_pass http://web_app;
+      }
+    }
+
 }
