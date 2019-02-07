@@ -1,9 +1,8 @@
 ---
 
 - name: create nginx.conf
+  become: yes
+  become_method: sudo
   template:
     src: nginx.conf.j2
     dest: /var/local/nginx/nginx.conf
-    owner: root
-    group: root
-    mode: 777
