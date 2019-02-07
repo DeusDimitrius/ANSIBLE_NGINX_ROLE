@@ -17,7 +17,7 @@ nginx_keepalive_requests: "100"
 
 nginx_worker_connections: "512"
 nginx_worker_processes: "3"
-nginx_mime_file_path:"/etc/nginx/mime.types"
+nginx_mime_file_path: "/etc/nginx/mime.types"
 
 nginx_exposed_ports: "80"
 nginx_ports_mapping: "7000:80"
