@@ -2,6 +2,8 @@
 
 - name: Create the Nginx configuration file
   template: 
-    src=nginx.conf.j2
-    dest=/var/local/nginx/nginx.conf
-    backup=yes
+    become: true
+    become_method: sudo
+    src: nginx.conf.j2
+    dest: /var/local/nginx/nginx.conf
+    backup: yes
