@@ -1,10 +1,10 @@
 ---
+
 # handlers file for nginx
 
----
-- name: Restart nginx
-  docker_container:
-    name: nginx
-    hostname: nginx
-    kill_signal: 'HUP'
-  when: nginx_container is defined and not nginx_container.changed
+#- name: Restart nginx
+#  docker_container:
+#    name: nginx
+#    hostname: nginx
+#    kill_signal: 'HUP'
+#  when: nginx_container is defined and not nginx_container.changed
