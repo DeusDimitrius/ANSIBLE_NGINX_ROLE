@@ -10,4 +10,5 @@
     memory: "{{ container_memory_limit }}"
     volumes: "{{ nginx_container_volumes }}"
     ports: "{{ nginx_ports_mapping }}"
-    networks: dnet
+    networks: 
+      - name: snet
