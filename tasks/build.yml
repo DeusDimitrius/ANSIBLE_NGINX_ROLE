@@ -6,7 +6,6 @@
     hostname: nginx
     state: started
     image: "{{ nginx_docker_image }}:{{ nginx_docker_image_tag }}"
-    pull: true
     ports: "{{ nginx_ports_mapping }}"
     networks:
       - name: snet
