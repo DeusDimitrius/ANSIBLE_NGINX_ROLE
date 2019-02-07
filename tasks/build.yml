@@ -11,4 +11,4 @@
     ports: "{{ nginx_ports_mapping }}"
     networks: 
       - name: snet
-#    volumes: "{{ nginx_container_volumes }}"
+    volumes: "{{ nginx_container_volumes }}"
