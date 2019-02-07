@@ -5,4 +5,4 @@
   become_method: sudo
   template:
     src: nginx.conf.j2
-    dest: /var/local/nginx/nginx.conf
+    dest: /home/jenkins/workspace/nginx/nginx.conf

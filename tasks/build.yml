@@ -11,4 +11,4 @@
     networks:
       - name: snet
     volumes:
-      - /var/local/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /home/jenkins/workspace/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
