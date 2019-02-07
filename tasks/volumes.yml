@@ -1,8 +1,4 @@
 ---
-- name: Configuration: Prepare empty volumes list
-  set_fact:
-    nginx_container_volumes: []
-  changed_when: false
 
 - name: Configuration: Prepare mounted folders volumes list
   set_fact:
