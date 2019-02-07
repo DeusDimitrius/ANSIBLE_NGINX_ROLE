@@ -11,9 +11,7 @@ events {
 }
 {% endblock %}
 
-{% block http_begin %}
 http {
-{% block http_basic %}
 
     include       {{ nginx_mime_file_path }};
     default_type  application/octet-stream;
@@ -37,5 +35,3 @@ http {
             	proxy_pass http://web_app;
       }
     }
-
-}
