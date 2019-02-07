@@ -2,11 +2,11 @@
 
 - name: nginx container
   docker_container:
-    name: nginx
+    name: balancer
     hostname: nginx
-    image: "{{ nginx_package_name }}"
+    image: "nginx:latest"
     state: started
-    restart_policy: always
+ #   restart_policy: always
     memory: "{{ container_memory_limit }}"
     ports: "{{ nginx_ports_mapping }}"
     networks: 
