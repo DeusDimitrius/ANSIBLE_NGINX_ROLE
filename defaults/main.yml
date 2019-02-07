@@ -1,9 +1,6 @@
 ---
 # defaults file for nginx
 
-#nginx_default_release: ""
-
-# The name of the nginx package to install.
 nginx_package_name: "nginx:latest"
 
 nginx_conf_template: "nginx.conf.j2"
