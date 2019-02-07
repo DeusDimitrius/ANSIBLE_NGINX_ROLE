@@ -1,8 +1,14 @@
 ---
+- name: 'Configuration: Render mounted directories'
+  file:
+    path: "{{ nginx_settings_path + item.dst | dirname }}"
+    state: directory
+    recurse: true
+  with_items: '{{ nginx_mounted_folders }}'
 
-- name: Create the Nginx configuration file
-  template: 
-    become: true
-    become_method: sudo
-    src: nginx.conf.j2
-    dest: /var/local/nginx/nginx.conf
+- name: 'Configuration: Copy mounted directories'
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ nginx_settings_path + item.dst }}"
+  with_items: '{{ nginx_mounted_folders }}'
+  register: nginx_mounted_folders_status
