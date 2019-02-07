@@ -2,7 +2,7 @@
 
 - name: create directory
   file:
-    src: nginx.conf.j2
+    sudo: yes
     path: "/var/locale/nginx"
     state: "directory"
     mode: "0755"
