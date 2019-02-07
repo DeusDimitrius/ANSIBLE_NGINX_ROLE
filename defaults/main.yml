@@ -1,12 +1,7 @@
 ---
 # defaults file for nginx
 
-nginx_default_release: ""
-
-# Use the official Nginx PPA for Ubuntu, and the version to use if so.
-# Use stable or mainline?
-nginx_ppa_use: false
-nginx_ppa_version: stable
+#nginx_default_release: ""
 
 # The name of the nginx package to install.
 nginx_package_name: "nginx:latest"
