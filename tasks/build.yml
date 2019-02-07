@@ -4,7 +4,7 @@
   docker_container:
     name: nginx
     hostname: nginx
-    image: "{{ nginx_pkg }}"
+    image: "{{ nginx_package_name }}"
     state: started
     restart_policy: always
     memory: "{{ container_memory_limit }}"

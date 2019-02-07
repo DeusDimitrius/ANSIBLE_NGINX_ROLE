@@ -1,6 +1,5 @@
 ---
 # vars file
 
-nginx_pkg: nginx:latest
-web_app: flaskapp
-server_name: localhost
+web_app: "flask"
+server_name: "localhost"
