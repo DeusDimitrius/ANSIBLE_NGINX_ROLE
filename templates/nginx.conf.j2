@@ -27,19 +27,17 @@ http {
     keepalive_timeout  {{ nginx_keepalive_timeout }};
     keepalive_requests {{ nginx_keepalive_requests }};
 
-    upstream web {
+    upstream web_app {
         server {{ IP1 }}:5000;
         server {{ IP2 }}:5000;
         server {{ IP3 }}:5000;
-}
+    }
 
 {% for server in upstream.servers %}
 	server {
         	listen 80;
         	location / {
-            		#root   /web;
-            		#index  index.html index.htm;
-            		proxy_pass http://{{ web_app }};
+            		proxy_pass http://web_app;
         	}
 	       }
 {% endfor %}
