@@ -3,7 +3,7 @@
 - name: create nginx.conf
   template:
     src: nginx.conf.j2
-    dest: /home/jenkins/workspace/nginx/nginx.conf
-    owner: jenkins
+    dest: "/home/jenkins/workspace/nginx/nginx.conf"
+    owner: root
     group: root
-    mode: 777
+    mode: 0777
