@@ -1,9 +1,9 @@
 ---
 
 - name: create directory
-  file:
   become: yes
   become_method: sudo
+  file:
     path: "/var/locale/nginx"
     state: "directory"
     mode: "0755"
