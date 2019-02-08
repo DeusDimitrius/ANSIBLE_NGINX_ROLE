@@ -18,12 +18,15 @@
   become: yes
   become_method: sudo
 
-- name: Stop nginx container.
-  docker_container:
-    name: "{{ container_name }}"
-    state: stopped
+- name: Nginx service restart (for alpine-nginx) 
+  command: docker exec balancer bash -c 'service nginx restart'
 
-- name: Start nginx container.
-  docker_container:
-    name: "{{ container_name }}"
-    state: started
+#- name: Stop nginx container.
+#  docker_container:
+#    name: "{{ container_name }}"
+#    state: stopped
+#
+#- name: Start nginx container.
+#  docker_container:
+#    name: "{{ container_name }}"
+#    state: started
