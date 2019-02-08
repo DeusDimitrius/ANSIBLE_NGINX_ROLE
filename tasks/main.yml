@@ -18,4 +18,8 @@
 - name: Run nginx container.
   docker_container:
     name: "{{ container_name }}"
+    exposed_ports: "{{ nginx_exposed_ports }}"
+    ports: "{{ nginx_ports_mapping }}"
+    networks:
+      - name: snet
     state: started

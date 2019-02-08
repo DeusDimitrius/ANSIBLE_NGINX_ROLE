@@ -1,12 +1,12 @@
 ---
 
-- name: run nginx container
+- name: build nginx container
   docker_container:
     name: "{{ container_name }}"
     hostname: nginx
     state: present
     image: "{{ nginx_docker_image }}:{{ nginx_docker_image_tag }}"
-    exposed_ports: "{{ nginx_exposed_ports }}"
-    ports: "{{ nginx_ports_mapping }}"
-    networks:
-      - name: snet
+#    exposed_ports: "{{ nginx_exposed_ports }}"
+#    ports: "{{ nginx_ports_mapping }}"
+#    networks:
+#      - name: snet
