@@ -19,7 +19,7 @@
   become_method: sudo
 
 - name: Nginx service restart (for alpine-nginx) 
-  command: docker exec balancer bash -c 'service nginx restart'
+  command: docker container exec balancer nginx -s reload
 
 #- name: Stop nginx container.
 #  docker_container:
