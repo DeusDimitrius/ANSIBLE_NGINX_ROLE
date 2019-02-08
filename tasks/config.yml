@@ -2,11 +2,11 @@
 
 - name: create directory
   file:
-    sudo: yes
+  become: yes
+  become_method: sudo
     path: "/var/locale/nginx"
     state: "directory"
     mode: "0755"
-  become: yes
 
 - name: config
   template:
