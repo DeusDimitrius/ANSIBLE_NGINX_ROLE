@@ -1,7 +1,7 @@
 ---
 
 - name: inspect host first web_app
-  shell: "docker inspect -f '{{ '{{' }} .NetworkSettings.Networks.deploy.IPAddress {{ '}}'  }}' flaskapp_1"
+  shell: "docker inspect --format '{''{ .NetworkSettings.IPAddress }''}' flaskapp_1"
   register: host_1
 - set_fact:
     IP1: "{{ host_1.stdout }}"
