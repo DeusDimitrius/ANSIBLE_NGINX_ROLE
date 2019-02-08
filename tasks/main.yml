@@ -11,7 +11,7 @@
 - import_tasks: build.yml
 
 - name: Copy in the container
-  command: docker cp /tmp/nginx/nginx.conf '{{ container_name }}':/etc/nginx/nginx.conf
+  command: docker cp /home/jenkins/workspace/nginx/nginx.conf '{{ container_name }}':/etc/nginx/nginx.conf
   become: yes
   become_method: sudo
 
