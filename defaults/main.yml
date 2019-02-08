@@ -1,7 +1,7 @@
 ---
 # defaults file for nginx
 
-nginx_docker_image: "alpine-nginx"
+nginx_docker_image: "smebberson/alpine-nginx"
 
 nginx_docker_image_tag: "latest"
 
