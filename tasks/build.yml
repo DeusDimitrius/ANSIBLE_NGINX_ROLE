@@ -6,7 +6,3 @@
     hostname: nginx
     state: present
     image: "{{ nginx_docker_image }}:{{ nginx_docker_image_tag }}"
-#    exposed_ports: "{{ nginx_exposed_ports }}"
-#    ports: "{{ nginx_ports_mapping }}"
-#    networks:
-#      - name: snet
