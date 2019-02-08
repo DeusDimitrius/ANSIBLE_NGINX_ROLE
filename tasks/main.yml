@@ -27,3 +27,4 @@
       - name: snet
     state: started
     restart: yes
+    command: docker cp /home/jenkins/workspace/nginx/nginx.conf balancer:/etc/nginx/nginx.conf
