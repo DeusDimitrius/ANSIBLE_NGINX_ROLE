@@ -19,11 +19,3 @@ nginx_ports_mapping: "7001:80"
 nginx_worker_connections: "512"
 
 nginx_keepalive_timeout: "65"
-
-# default 
-host_1:
-host_2:
-host_3:
-IP1:
-IP2:
-IP3:
