@@ -5,6 +5,8 @@ nginx_docker_image: "nginx"
 
 nginx_docker_image_tag: "latest"
 
+container_name: "balancer"
+
 nginx_worker_processes: "3"
 
 nginx_mime_file_path: "/etc/nginx/mime.types"

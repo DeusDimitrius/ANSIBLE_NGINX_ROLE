@@ -9,3 +9,13 @@
 - import_tasks: config.yml
 
 - import_tasks: build.yml
+
+- name: Copy in the container
+  command: docker cp /tmp/nginx/nginx.conf '{{ container_name }}':/etc/nginx/nginx.conf
+  become: yes
+  become_method: sudo
+
+- name: Run nginx container.
+  docker_container:
+    name: "{{ container_name }}"
+    state: started

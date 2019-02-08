@@ -2,12 +2,10 @@
 
 - name: run nginx container
   docker_container:
-    name: balancer
+    name: "{{ container_name }}"
     hostname: nginx
-    state: started
+    state: present
     image: "{{ nginx_docker_image }}:{{ nginx_docker_image_tag }}"
     ports: "{{ nginx_ports_mapping }}"
     networks:
       - name: snet
-    volumes:
-      - /tmp/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
