@@ -24,5 +24,3 @@
       - name: snet
     state: started
     restart: yes
-    volumes:
-      - /home/jenkins/workspace/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
