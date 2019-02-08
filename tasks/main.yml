@@ -18,13 +18,12 @@
   become: yes
   become_method: sudo
 
-- name: Run nginx container.
+- name: Stop nginx container.
   docker_container:
     name: "{{ container_name }}"
-    exposed_ports: "{{ nginx_exposed_ports }}"
-    ports: "{{ nginx_ports_mapping }}"
-    networks:
-      - name: snet
+    state: stopped
+
+- name: Start nginx container.
+  docker_container:
+    name: "{{ container_name }}"
     state: started
-    restart: yes
-    command: docker cp /home/jenkins/workspace/nginx/nginx.conf balancer:/etc/nginx/nginx.conf
