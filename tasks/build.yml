@@ -4,5 +4,5 @@
   docker_container:
     name: "{{ container_name }}"
     hostname: nginx
-    state: present
+    state: started
     image: "{{ nginx_docker_image }}:{{ nginx_docker_image_tag }}"
