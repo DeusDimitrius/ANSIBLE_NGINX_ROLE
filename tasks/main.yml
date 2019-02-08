@@ -12,7 +12,7 @@
 
 - name: Copy in the container
   #command: docker cp /home/jenkins/workspace/nginx/nginx.conf '{{ container_name }}':/etc/nginx/nginx.conf
-  command: docker cp '{{ container_name }}':/home/jenkins/workspace/nginx/nginx.conf /etc/nginx/nginx.conf|-
+  command: docker cp balancer:/etc/nginx/nginx.conf /home/jenkins/workspace/nginx/nginx.conf
   become: yes
   become_method: sudo
 
